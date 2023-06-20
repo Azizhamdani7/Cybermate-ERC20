@@ -1,0 +1,18 @@
+{
+  "name": "cybermate-erc20",
+  "version": "1.0.0",
+  "description": "cybermate(meeting setup application-ERC20 token for in-app payments)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.15.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
