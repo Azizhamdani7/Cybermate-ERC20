@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-ethers");
 
 const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY;
 const POLYGON_PRIVATE_KEY = process.env.POLYGON_PRIVATE_KEY;

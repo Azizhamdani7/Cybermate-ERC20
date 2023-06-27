@@ -3,60 +3,8 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "to",
+				"name": "_tokenContract",
 				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokens",
-				"type": "uint256"
-			}
-		],
-		"name": "mint",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_symbol",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_totalSupply",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -68,24 +16,75 @@
 			{
 				"indexed": true,
 				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
+				"name": "seller",
 				"type": "address"
 			},
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "value",
+				"name": "sellerAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "Transfer",
+		"name": "ServiceCompleted",
 		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "seller",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "serviceAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "ServiceCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "cancelService",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "completeService",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_seller",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_serviceAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "createService",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -95,25 +94,22 @@
 				"type": "address"
 			}
 		],
-		"name": "balanceOf",
+		"name": "escrows",
 		"outputs": [
+			{
+				"internalType": "address",
+				"name": "seller",
+				"type": "address"
+			},
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "serviceAmount",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "decimals",
-		"outputs": [
+			},
 			{
-				"internalType": "uint8",
-				"name": "",
-				"type": "uint8"
+				"internalType": "bool",
+				"name": "serviceCompleted",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -121,20 +117,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
+		"name": "platform",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -147,25 +130,12 @@
 	},
 	{
 		"inputs": [],
-		"name": "symbol",
+		"name": "tokenContract",
 		"outputs": [
 			{
-				"internalType": "string",
+				"internalType": "contract MyToken",
 				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",

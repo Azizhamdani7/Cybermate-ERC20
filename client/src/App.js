@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import abi from "./abi.json";
 import "./app.css";
 
-const tokenAddress = "0x776c9c2FbfC3b122b1D7036d392bE229e44D62A8";
+const tokenAddress = "0xA17694eFF7FF4A707f6bF3a41b2e8fB23c38365d";
 
 function App() {
   const [tokenBalance, setTokenBalance] = useState(0);
@@ -126,10 +126,10 @@ function App() {
     <Container>
       <Row className="mt-5">
         <Col>
-          <h1>My Token DApp</h1>
+          <h1>Cybermate DApp</h1>
           <h3>Token Balance: {tokenBalance}</h3>
           <h3>Token Name: {tokenName}</h3>
-          <h3>Token Name: {tokenSymbol}</h3>
+          <h3>Token symbol: {tokenSymbol}</h3>
           <br />
 
           <form>
