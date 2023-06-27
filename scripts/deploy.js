@@ -11,8 +11,11 @@ async function main() {
   //Deploy Escrow contract
 
   console.log("Deploying Escrow contract with the account:", deployer.address);
-  const escrow = await ethers.deployContract("Escrow", [token.getAddress()]);
-  console.log("escrow address:", await escrow.getAddress());
+  const escrow = await ethers.deployContract("Escrow", [tokenAddress]);
+  const escrowAddress = escrow.getAddress();
+  console.log("escrow address:", await escrowAddress);
+
+  console.log("Both the contracts have been deployed successfully. ");
 }
 
 main()
